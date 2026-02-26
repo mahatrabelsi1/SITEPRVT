@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Altura France Proprete</title>
+  <meta name="description" content="Contactez Altura France Proprete et demandez un devis de nettoyage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header" id="top">
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <p class="topbar__item"><span aria-hidden="true">E-mail</span> <a href="mailto:contact.alturafrance@gmail.com">contact.alturafrance@gmail.com</a></p>
+        <p class="topbar__item"><span aria-hidden="true">Telephone</span> <a href="tel:+33674410324">06.74.41.03.24</a></p>
+      </div>
+    </div>
+    <div class="nav-shell">
+      <div class="container nav-shell__inner">
+        <a class="brand" href="index.html" aria-label="Accueil Altura France Proprete">
+          <img src="images/logo-altura-france-proprete.svg" alt="altura france proprete logo" width="174" height="48">
+          <span class="brand__fallback">Altura France Proprete</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+        <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+          <ul class="site-nav__list">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">A propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+            <li><a class="btn btn--sm" href="#devis">CONTACTEZ-NOUS</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="cta-band" aria-labelledby="contact-bandeau-title" style="margin-top: 0;">
+      <div class="container cta-band__inner">
+        <div>
+          <p class="eyebrow">CONTACTEZ-NOUS</p>
+          <h1 id="contact-bandeau-title" style="margin:0;font-size:clamp(1.8rem,4vw,3rem)">Services de nettoyage professionnels et fiables</h1>
+          <p>Nous offrons des solutions de nettoyage adaptees a vos besoins.</p>
+        </div>
+        <a class="btn" href="tel:+33674410324">Appelez-nous</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__content" id="equipe">
+          <p class="eyebrow">CONTACT</p>
+          <h2 id="contact-title">Demandez un devis</h2>
+          <p>Nous offrons des solutions de nettoyage professionnelles.</p>
+
+          <div class="contact-cards">
+            <article class="contact-card">
+              <h3>Contact</h3>
+              <p><a href="tel:+33674410324">06.74.41.03.24</a></p>
+            </article>
+            <article class="contact-card">
+              <h3>E-mail</h3>
+              <p><a href="mailto:contact.alturafrance@gmail.com">contact.alturafrance@gmail.com</a></p>
+            </article>
+            <article class="contact-card">
+              <h3>Aide</h3>
+              <p>Entrez votre adresse email</p>
+            </article>
+          </div>
+        </div>
+
+        <form class="quote-form" id="devis" action="https://formsubmit.co/contact.alturafrance@gmail.com" method="POST" aria-label="Formulaire de demande de devis">
+          <h3>Demandez un devis</h3>
+          <p class="quote-form__intro">Remplissez le formulaire. Les informations seront envoyees par e-mail a votre adresse de contact Altura France Proprete.</p>
+
+          <input type="hidden" name="_subject" value="Nouvelle demande de devis - Altura France Proprete">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="http://localhost:5500/contact.html?envoye=1">
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="nom">Nom*</label>
+              <input id="nom" name="Nom" type="text" autocomplete="family-name" required placeholder="Nom">
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field">
+              <label for="prenom">Prenom*</label>
+              <input id="prenom" name="Prenom" type="text" autocomplete="given-name" required placeholder="Prenom">
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field">
+              <label for="email">E-mail*</label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="E-mail">
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field">
+              <label for="telephone">Numero de telephone</label>
+              <input id="telephone" name="Telephone" type="tel" autocomplete="tel" required pattern="[0-9 +().-]{8,}" placeholder="Reponse courte">
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field field--full">
+              <label for="service">Type de prestation</label>
+              <select id="service" name="Service" required>
+                <option value="">Selectionnez une prestation</option>
+                <option>Nettoyage residentiel</option>
+                <option>Nettoyage commercial</option>
+                <option>Nettoyage industriel</option>
+                <option>Entretien de bureaux</option>
+                <option>Deratisation</option>
+                <option>Panne de hottes</option>
+                <option>Produits ecologiques</option>
+              </select>
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field field--full">
+              <label for="message">Message*</label>
+              <textarea id="message" name="Message" rows="5" required placeholder="Message"></textarea>
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+          </div>
+
+          <button class="btn" type="submit">Envoyer</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-status" id="contact-success" role="status" aria-live="polite"></p>
+          <p class="quote-form__intro" style="margin-top:0.75rem;">
+            Note: FormSubmit peut demander une confirmation la premiere fois pour activer l'envoi vers votre email.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="brand brand--footer" href="index.html">
+          <img src="images/logo-altura-france-proprete.svg" alt="altura france proprete logo" width="174" height="48">
+          <span class="brand__fallback">Altura France Proprete</span>
+        </a>
+        <p>Nous offrons des solutions de nettoyage professionnelles.</p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul class="footer-links">
+          <li><a href="service-nettoyage-residentiel.html">Nettoyage residentiel</a></li>
+          <li><a href="service-nettoyage-commercial.html">Nettoyage commercial</a></li>
+          <li><a href="service-nettoyage-industriel.html">Nettoyage industriel</a></li>
+          <li><a href="service-bureaux.html">Entretien de bureaux</a></li>
+          <li><a href="service-deratisation.html">Deratisation</a></li>
+          <li><a href="service-panne-hottes.html">Panne de hottes</a></li>
+          <li><a href="service-produits-ecologiques.html">Produits ecologiques</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">A propos</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul class="footer-links">
+          <li><a href="mailto:contact.alturafrance@gmail.com">contact.alturafrance@gmail.com</a></li>
+          <li><a href="tel:+33674410324">06.74.41.03.24</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Altura France Proprete. Tous droits reserves.</p>
+      <a href="#top">Retour en haut</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
