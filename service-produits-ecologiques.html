@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang='fr'>
 <head>
   <meta charset='utf-8'>
@@ -11,8 +11,7 @@
   <link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
-  <a class='skip-link' href='#contenu'>Aller au contenu</a>
-  <header class='site-header' id='top'>
+<header class='site-header' id='top'>
     <div class='topbar'><div class='container topbar__inner'><p class='topbar__item'><span aria-hidden='true'>E-mail</span> <a href='mailto:contact.alturafrance@gmail.com'>contact.alturafrance@gmail.com</a></p><p class='topbar__item'><span aria-hidden='true'>Telephone</span> <a href='tel:+33674410324'>06.74.41.03.24</a></p></div></div>
     <div class='nav-shell'><div class='container nav-shell__inner'>
       <a class='brand' href='index.html' aria-label='Accueil Altura France Proprete'><img src='images/logo-altura-france-proprete.svg' alt='altura france proprete logo' width='174' height='48'><span class='brand__fallback'>Altura France Proprete</span></a>
@@ -28,7 +27,7 @@
     </div></div>
   </header>
 
-  <main id='contenu'>
+  <main id="contenu" style="margin-top: 100px;">
     <section class='page-hero' aria-labelledby='service-title'><div class='page-hero__media'></div><div class='container page-hero__content'><p class='breadcrumbs'><a href='index.html'>Accueil</a> <span>›</span> <a href='services.html'>Services</a> <span>›</span> <span>Produits ecologiques</span></p><h1 id='service-title'>Produits ecologiques</h1></div></section>
 
     <section class='service-page'>
@@ -64,23 +63,52 @@
       </div>
     </section>
   </main>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="brand brand--footer" href="#top">
+          <img src="images/logo-altura-france-proprete-blanc.svg" alt="altura france proprete logo" width="174" height="48">
+          <span class="brand__fallback">Altura France Propreté</span>
+        </a>
+        <p>Nous offrons des solutions de nettoyage professionnelles.</p>
+      </div>
 
-  <footer class='site-footer'>
-    <div class='container footer__grid'>
-      <div><a class='brand brand--footer' href='index.html'><img src='images/logo-altura-france-proprete.svg' alt='altura france proprete logo' width='174' height='48'><span class='brand__fallback'>Altura France Proprete</span></a><p>Services de nettoyage professionnels et fiables.</p></div>
-      <div><h2>Services</h2><ul class='footer-links'>
-        <li><a href='service-nettoyage-residentiel.html'>Nettoyage residentiel</a></li>
-<li><a href='service-nettoyage-commercial.html'>Nettoyage commercial</a></li>
-<li><a href='service-nettoyage-industriel.html'>Nettoyage industriel</a></li>
-<li><a href='service-bureaux.html'>Entretien de bureaux</a></li>
-<li><a href='service-deratisation.html'>Deratisation</a></li>
-<li><a href='service-panne-hottes.html'>Panne de hottes</a></li>
-<li><a href='service-produits-ecologiques.html'>Produits ecologiques</a></li>
-      </ul></div>
-      <div><h2>Pages</h2><ul class='footer-links'><li><a href='index.html'>Accueil</a></li><li><a href='about.html'>A propos</a></li><li><a href='services.html'>Services</a></li><li><a href='projects.html'>Projets</a></li></ul></div>
-      <div><h2>Contact</h2><ul class='footer-links'><li><a href='mailto:contact.alturafrance@gmail.com'>contact.alturafrance@gmail.com</a></li><li><a href='tel:+33674410324'>06.74.41.03.24</a></li></ul></div>
+      <div>
+        <h2>Services</h2>
+        <ul class="footer-links">
+          <li><a href="service-nettoyage-residentiel.html">Nettoyage résidentiel</a></li>
+          <li><a href="service-nettoyage-commercial.html">Nettoyage commercial</a></li>
+          <li><a href="service-nettoyage-industriel.html">Nettoyage industriel</a></li>
+          <li><a href="service-bureaux.html">Entretien de bureaux</a></li>
+          <li><a href="service-deratisation.html">Dératisation</a></li>
+          <li><a href="service-panne-hottes.html">Panne de hottes</a></li>
+          <li><a href="service-produits-ecologiques.html">Produits écologiques</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Contact</h2>
+        <ul class="footer-links">
+          <li><a href="mailto:contact.alturafrance@gmail.com">contact.alturafrance@gmail.com</a></li>
+          <li><a href="tel:+33674410324">06.74.41.03.24</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Autres questions?</h2>
+        <p>contacter nous pour une intervention rapide et efficace</p>
+<form class="newsletter-form" action="#" method="post" novalidate>
+          <label class="sr-only" for="newsletter-tel">Entrez votre numéro de téléphone</label>
+          <input id="newsletter-tel" type="tel" name="newsletter-tel" placeholder="Votre numéro de téléphone ici">
+          <button type="submit">Envoyer votre demande maintenant</button>
+        </form>
+      </div>
     </div>
-    <div class='container footer__bottom'><p>© <span id='year'></span> Altura France Proprete. Tous droits reserves.</p><a href='#top'>Retour en haut</a></div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Altura France Propreté. Tous droits réservés.</p>
+      <a href="#top">Retour en haut</a>
+    </div>
   </footer>
 
   <script src='js/main.js'></script>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -11,29 +11,24 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
-
-  <header class="site-header" id="top">
+<header class="site-header" id="top">
     <div class="topbar">
       <div class="container topbar__inner">
         <p class="topbar__item">
-          <span aria-hidden="true">Telephone :</span>
-          <a href="tel:+001234567">+00 1234 567</a>
-          <span>ou email :</span>
-          <a href="mailto:emailsample@email.com">emailsample@email.com</a>
+          <span aria-hidden="true">E-mail</span>
+          <a href="mailto:contact.alturafrance@gmail.com">contact.alturafrance@gmail.com</a>
         </p>
-        <div class="topbar__socials" aria-label="Réseaux sociaux">
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-          <a href="#">Instagram</a>
-          <a href="#">Dribbble</a>
-        </div>
+        <p class="topbar__item">
+          <span aria-hidden="true">Telephone</span>
+          <a href="tel:+33674410324">06.74.41.03.24</a>
+        </p>
       </div>
     </div>
 
     <div class="nav-shell">
       <div class="container nav-shell__inner">
         <a class="brand" href="index.html" aria-label="Accueil Altura France Proprete">
+          <img src="images/logo-altura-france-proprete.svg" alt="altura france proprete logo" width="174" height="48">
           <span class="brand__fallback">Altura France Proprete</span>
         </a>
 
@@ -49,15 +44,15 @@
             <li><a href="about.html" aria-current="page">A propos</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="projects.html">Projets</a></li>
-            <li><a href="blog.html">Actualites</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a class="btn btn--sm" href="contact.html#devis">CONTACTEZ-NOUS</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
 
-  <main id="contenu">
+  <main id="contenu" style="margin-top: 100px;">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="page-hero__media"></div>
       <div class="container page-hero__content">
@@ -181,42 +176,80 @@
           <p class="eyebrow">TEMOIGNAGES</p>
           <h2 id="testimonials-title">Clients satisfaits</h2>
         </div>
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <div class="testimonial-card__head">
-              <img src="images/person_1.jpg" alt="Roger Scott" loading="lazy">
-              <div>
-                <h3>Roger Scott</h3>
-                <p>Client satisfait</p>
+        <div class="testimonial-marquee" aria-label="Defilement de temoignages">
+          <div class="testimonial-grid testimonial-grid--ticker">
+            <article class="testimonial-card">
+              <div class="testimonial-card__head">
+                <img src="images/person_1.jpg" alt="Roger Scott" loading="lazy">
+                <div>
+                  <h3>Roger Scott</h3>
+                  <p>Client satisfait</p>
+                </div>
+                <span aria-hidden="true">"</span>
               </div>
-              <span aria-hidden="true">”</span>
-            </div>
-            <p>Tres bon service, equipe serieuse et resultat propre. Nous recommandons cette entreprise.</p>
-          </article>
+              <p>Tres bon service, equipe serieuse et resultat propre. Nous recommandons cette entreprise.</p>
+            </article>
 
-          <article class="testimonial-card">
-            <div class="testimonial-card__head">
-              <img src="images/person_2.jpg" alt="Roger Scott" loading="lazy">
-              <div>
-                <h3>Roger Scott</h3>
-                <p>Client satisfait</p>
+            <article class="testimonial-card">
+              <div class="testimonial-card__head">
+                <img src="images/person_2.jpg" alt="Roger Scott" loading="lazy">
+                <div>
+                  <h3>Roger Scott</h3>
+                  <p>Client satisfait</p>
+                </div>
+                <span aria-hidden="true">"</span>
               </div>
-              <span aria-hidden="true">”</span>
-            </div>
-            <p>Intervention rapide et travail soigne dans nos locaux professionnels.</p>
-          </article>
+              <p>Intervention rapide et travail soigne dans nos locaux professionnels.</p>
+            </article>
 
-          <article class="testimonial-card">
-            <div class="testimonial-card__head">
-              <img src="images/person_4.jpg" alt="Roger Scott" loading="lazy">
-              <div>
-                <h3>Roger Scott</h3>
-                <p>Client satisfait</p>
+            <article class="testimonial-card">
+              <div class="testimonial-card__head">
+                <img src="images/person_4.jpg" alt="Roger Scott" loading="lazy">
+                <div>
+                  <h3>Roger Scott</h3>
+                  <p>Client satisfait</p>
+                </div>
+                <span aria-hidden="true">"</span>
               </div>
-              <span aria-hidden="true">”</span>
-            </div>
-            <p>Equipe fiable, devis clair et tres bonne qualite de prestation.</p>
-          </article>
+              <p>Equipe fiable, devis clair et tres bonne qualite de prestation.</p>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="testimonial-card__head">
+                <img src="images/person_1.jpg" alt="" loading="lazy">
+                <div>
+                  <h3>Roger Scott</h3>
+                  <p>Client satisfait</p>
+                </div>
+                <span aria-hidden="true">"</span>
+              </div>
+              <p>Tres bon service, equipe serieuse et resultat propre. Nous recommandons cette entreprise.</p>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="testimonial-card__head">
+                <img src="images/person_2.jpg" alt="" loading="lazy">
+                <div>
+                  <h3>Roger Scott</h3>
+                  <p>Client satisfait</p>
+                </div>
+                <span aria-hidden="true">"</span>
+              </div>
+              <p>Intervention rapide et travail soigne dans nos locaux professionnels.</p>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="testimonial-card__head">
+                <img src="images/person_4.jpg" alt="" loading="lazy">
+                <div>
+                  <h3>Roger Scott</h3>
+                  <p>Client satisfait</p>
+                </div>
+                <span aria-hidden="true">"</span>
+              </div>
+              <p>Equipe fiable, devis clair et tres bonne qualite de prestation.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -235,79 +268,51 @@
       </div>
     </section>
 
-    <section class="news-section" aria-labelledby="news-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">DERNIERES NOUVELLES</p>
-          <h2 id="news-title">Dernieres nouvelles</h2>
-        </div>
-        <div class="news-grid">
-          <article class="news-card">
-            <img src="images/image_1.jpg" alt="Dernieres nouvelles" loading="lazy">
-            <div class="news-card__body">
-              <h3>Conseils et actualites de nettoyage professionnel</h3>
-              <p class="news-meta">Mar. 04, 2020 &nbsp; Admin &nbsp; 19</p>
-            </div>
-          </article>
-          <article class="news-card">
-            <img src="images/image_2.jpg" alt="Dernieres nouvelles" loading="lazy">
-            <div class="news-card__body">
-              <h3>Conseils et actualites de nettoyage professionnel</h3>
-              <p class="news-meta">Mar. 04, 2020 &nbsp; Admin &nbsp; 19</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
   </main>
-
   <footer class="site-footer">
     <div class="container footer__grid">
       <div>
-        <h2>Altura France Proprete</h2>
-        <p>
-          Une petite riviere nommee Duden traverse leur region et leur fournit les regelialia necessaires.
-          C est un pays paradisiaque.
-        </p>
-      </div>
-
-      <div>
-        <h2>Liens rapides</h2>
-        <ul class="footer-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="about.html">A propos</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projets</a></li>
-          <li><a href="blog.html">Actualites</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h2>Vous avez des questions ?</h2>
-        <ul class="footer-links">
-          <li>203 Fake St. Mountain View, San Francisco, California, USA</li>
-          <li><a href="tel:+23923929210">+2 392 3929 210</a></li>
-          <li><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
-        </ul>
+        <a class="brand brand--footer" href="#top">
+          <img src="images/logo-altura-france-proprete-blanc.svg" alt="altura france proprete logo" width="174" height="48">
+          <span class="brand__fallback">Altura France Propreté</span>
+        </a>
+        <p>Nous offrons des solutions de nettoyage professionnelles.</p>
       </div>
 
       <div>
         <h2>Services</h2>
         <ul class="footer-links">
-          <li><a href="service-nettoyage-residentiel.html">Nettoyage residentiel</a></li>
+          <li><a href="service-nettoyage-residentiel.html">Nettoyage résidentiel</a></li>
           <li><a href="service-nettoyage-commercial.html">Nettoyage commercial</a></li>
           <li><a href="service-nettoyage-industriel.html">Nettoyage industriel</a></li>
-          <li><a href="service-bureaux.html">Bureaux</a></li>
-          <li><a href="service-deratisation.html">Deratisation</a></li>
+          <li><a href="service-bureaux.html">Entretien de bureaux</a></li>
+          <li><a href="service-deratisation.html">Dératisation</a></li>
           <li><a href="service-panne-hottes.html">Panne de hottes</a></li>
-          <li><a href="service-produits-ecologiques.html">Produits ecologiques</a></li>
+          <li><a href="service-produits-ecologiques.html">Produits écologiques</a></li>
         </ul>
+      </div>
+
+      <div>
+        <h2>Contact</h2>
+        <ul class="footer-links">
+          <li><a href="mailto:contact.alturafrance@gmail.com">contact.alturafrance@gmail.com</a></li>
+          <li><a href="tel:+33674410324">06.74.41.03.24</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Autres questions?</h2>
+        <p>contacter nous pour une intervention rapide et efficace</p>
+<form class="newsletter-form" action="#" method="post" novalidate>
+          <label class="sr-only" for="newsletter-tel">Entrez votre numéro de téléphone</label>
+          <input id="newsletter-tel" type="tel" name="newsletter-tel" placeholder="Votre numéro de téléphone ici">
+          <button type="submit">Envoyer votre demande maintenant</button>
+        </form>
       </div>
     </div>
 
     <div class="container footer__bottom">
-      <p class="footer-note">Copyright �2026 Tous droits reserves | Modele adapte pour Altura France Proprete</p>
+      <p>© <span id="year"></span> Altura France Propreté. Tous droits réservés.</p>
       <a href="#top">Retour en haut</a>
     </div>
   </footer>
