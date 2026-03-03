@@ -367,7 +367,7 @@ a {
   inset: 0;
   background:
     linear-gradient(180deg, rgba(12, 17, 22, 0.35), rgba(12, 17, 22, 0.55)),
-    url("../images/bg_2.jpg") center / cover no-repeat;
+    url("../images/hottes.png") center / cover no-repeat;
 }
 
 .page-hero__content {

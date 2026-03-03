@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -145,11 +145,10 @@
             <div class="hours-card__top">
               <h2>Horaires</h2>
               <p class="hours-card__label">Jours d'ouverture :</p>
-              <p>Lundi - Vendredi : 9h à 20h</p>
-              <p>Samedi : 9h à 17h</p>
+              <p>Toute la semaine</p>
+              <p>24/24</p>
               <p class="hours-card__label">Congés :</p>
-              <p>Tous les dimanches</p>
-              <p>Jours fériés</p>
+              <p>Jours fériés (sauf urgences)</p>
             </div>
             <div class="hours-card__bottom">
               <p>URGENCE</p>
@@ -559,6 +558,90 @@
           <p>Nous offrons des solutions de nettoyage adaptées à vos besoins.</p>
         </div>
         <a class="btn" href="contact.html">Vous voulez un devis ?</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__content" id="equipe">
+          <p class="eyebrow">CONTACT</p>
+          <h2 id="contact-title">Demandez un devis</h2>
+          <p>Nous offrons des solutions de nettoyage professionnelles.</p>
+
+          <div class="contact-cards">
+            <article class="contact-card">
+              <h3>Contact</h3>
+              <p><a href="tel:+33674410324">06.74.41.03.24</a></p>
+            </article>
+            <article class="contact-card">
+              <h3>E-mail</h3>
+              <p><a href="mailto:contact.alturafrance@gmail.com">contact.alturafrance@gmail.com</a></p>
+            </article>
+            <article class="contact-card">
+              <h3>Aide</h3>
+              <p>Entrez votre adresse email</p>
+            </article>
+          </div>
+        </div>
+
+        <form class="quote-form" id="devis" action="https://formsubmit.co/contact.alturafrance@gmail.com" method="POST" aria-label="Formulaire de demande de devis">
+          <h3>Demandez un devis</h3>
+          <p class="quote-form__intro">Remplissez le formulaire. Les informations seront envoyees par e-mail a votre adresse de contact Altura France Proprete.</p>
+
+          <input type="hidden" name="_subject" value="Nouvelle demande de devis - Altura France Proprete">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="http://localhost:5500/contact.html?envoye=1">
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="nom">Nom*</label>
+              <input id="nom" name="Nom" type="text" autocomplete="family-name" required placeholder="Nom">
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field">
+              <label for="prenom">Prenom*</label>
+              <input id="prenom" name="Prenom" type="text" autocomplete="given-name" required placeholder="Prenom">
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field">
+              <label for="email">E-mail*</label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="E-mail">
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field">
+              <label for="telephone">Numero de telephone</label>
+              <input id="telephone" name="Telephone" type="tel" autocomplete="tel" required pattern="[0-9 +().-]{8,}" placeholder="Reponse courte">
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field field--full">
+              <label for="service">Type de prestation</label>
+              <select id="service" name="Service" required>
+                <option value="">Selectionnez une prestation</option>
+                <option>Nettoyage residentiel</option>
+                <option>Nettoyage commercial</option>
+                <option>Nettoyage industriel</option>
+                <option>Entretien de bureaux</option>
+                <option>Deratisation</option>
+                <option>Panne de hottes</option>
+                <option>Produits ecologiques</option>
+              </select>
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+            <div class="field field--full">
+              <label for="message">Message*</label>
+              <textarea id="message" name="Message" rows="5" required placeholder="Message"></textarea>
+              <small class="field__error" aria-live="polite"></small>
+            </div>
+          </div>
+
+          <button class="btn" type="submit">Envoyer</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-status" id="contact-success" role="status" aria-live="polite"></p>
+          <p class="quote-form__intro" style="margin-top:0.75rem;">
+            Note: FormSubmit peut demander une confirmation la premiere fois pour activer l'envoi vers votre email.
+          </p>
+        </form>
       </div>
     </section>
   </main>
