@@ -6,6 +6,7 @@
   var status = document.getElementById("form-status");
   var contactSuccess = document.getElementById("contact-success");
   var projectCards = Array.prototype.slice.call(document.querySelectorAll(".project-card"));
+  var autoGalleries = Array.prototype.slice.call(document.querySelectorAll(".auto-gallery"));
   var statsStrip = document.querySelector(".stats-strip");
   var pageTransitionMs = 220;
 
@@ -109,6 +110,99 @@
       });
     });
   }
+
+  function startAutoGallery(gallery) {
+    var slides = Array.prototype.slice.call(gallery.querySelectorAll("img"));
+    if (slides.length < 2) return;
+
+    var activeIndex = Math.max(slides.findIndex(function (slide) {
+      return slide.classList.contains("is-active");
+    }), 0);
+    var intervalMs = parseInt(gallery.getAttribute("data-interval"), 10) || 1800;
+
+    slides.forEach(function (slide, index) {
+      slide.classList.toggle("is-active", index === activeIndex);
+    });
+
+    window.setInterval(function () {
+      slides[activeIndex].classList.remove("is-active");
+      activeIndex = (activeIndex + 1) % slides.length;
+      slides[activeIndex].classList.add("is-active");
+    }, intervalMs);
+  }
+
+  function parseDirectoryImages(htmlText, rootPath) {
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(htmlText, "text/html");
+    var links = Array.prototype.slice.call(doc.querySelectorAll("a[href]"));
+    var exts = /\.(avif|bmp|gif|jpe?g|png|svg|webp)$/i;
+    var seen = {};
+    var baseUrl = new URL(rootPath, window.location.href);
+
+    return links
+      .map(function (link) {
+        var href = link.getAttribute("href") || "";
+        return href.split("#")[0].split("?")[0];
+      })
+      .filter(function (href) {
+        return exts.test(href);
+      })
+      .map(function (href) {
+        return new URL(href, baseUrl).href;
+      })
+      .filter(function (url) {
+        if (seen[url]) return false;
+        seen[url] = true;
+        return true;
+      });
+  }
+
+  function buildAutoGalleriesFromFolder() {
+    if (!autoGalleries.length) return;
+
+    var wrapper = document.querySelector(".auto-gallery-grid[data-gallery-root]");
+    if (!wrapper || !("fetch" in window) || !("DOMParser" in window)) {
+      autoGalleries.forEach(startAutoGallery);
+      return;
+    }
+
+    var rootPath = wrapper.getAttribute("data-gallery-root") || "imageG/";
+
+    fetch(rootPath)
+      .then(function (response) {
+        if (!response.ok) throw new Error("Directory listing not available");
+        return response.text();
+      })
+      .then(function (htmlText) {
+        var images = parseDirectoryImages(htmlText, rootPath);
+        if (!images.length) throw new Error("No images found in folder");
+
+        autoGalleries.forEach(function (gallery, galleryIndex) {
+          var assigned = images.filter(function (_, imageIndex) {
+            return imageIndex % autoGalleries.length === galleryIndex;
+          });
+
+          if (!assigned.length) assigned = images;
+
+          gallery.innerHTML = "";
+          assigned.forEach(function (src, index) {
+            var img = document.createElement("img");
+            img.src = src;
+            img.alt = "Galerie projet nettoyage " + (galleryIndex + 1) + " - " + (index + 1);
+            img.loading = "lazy";
+            if (index === 0) img.classList.add("is-active");
+            gallery.appendChild(img);
+          });
+
+          startAutoGallery(gallery);
+        });
+      })
+      .catch(function () {
+        autoGalleries.forEach(startAutoGallery);
+      });
+  }
+
+  buildAutoGalleriesFromFolder();
 
   var serviceLegends = Array.prototype.slice.call(document.querySelectorAll(".service-legend"));
   if (serviceLegends.length) {
