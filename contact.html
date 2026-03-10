@@ -28,12 +28,11 @@
         <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
           <ul class="site-nav__list">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="about.html">A propos</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">À propos</a></li>
             <li><a href="projects.html">Projets</a></li>
             <li><a href="contact.html" aria-current="page">Contact</a></li>
-            <li><a href="service-degraissage-hottes.html">Dégrissage hottes</a></li>
-            <li><a href="service-nettoyage-cuisines-pro.html">Nettoyage cuisines pro</a></li>
+            <li><a href="service-degraissage-hottes.html">nettoyage hottes de cuisine</a></li>
+            <li><a href="service-nettoyage-cuisines-pro.html">Nettoyage cuisines professionnel</a></li>
             <li><a class="btn btn--sm" href="#devis">CONTACTEZ-NOUS</a></li>
           </ul>
         </nav>
@@ -76,14 +75,15 @@
           </div>
         </div>
 
-        <form class="quote-form" id="devis" action="https://formsubmit.co/contact.alturafrance@gmail.com" method="POST" aria-label="Formulaire de demande de devis">
+        <form class="quote-form" id="devis" action="https://formsubmit.co/Contact.alturafrance@gmail.com" method="POST" aria-label="Formulaire de demande de devis">
           <h3>Demandez un devis</h3>
-          <p class="quote-form__intro">Remplissez le formulaire. Les informations seront envoyees par e-mail a votre adresse de contact Altura France Proprete.</p>
+          <p class="quote-form__intro">Remplissez le formulaire. Les informations seront envoyees par e-mail a Contact.alturafrance@gmail.com.</p>
 
           <input type="hidden" name="_subject" value="Nouvelle demande de devis - Altura France Proprete">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="http://localhost:5500/contact.html?envoye=1">
+          <input type="hidden" name="_replyto" value="">
+          <input type="hidden" name="_url" value="">
 
           <div class="field-grid">
             <div class="field">
@@ -130,9 +130,6 @@
           <button class="btn" type="submit">Envoyer</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           <p class="form-status" id="contact-success" role="status" aria-live="polite"></p>
-          <p class="quote-form__intro" style="margin-top:0.75rem;">
-            Note: FormSubmit peut demander une confirmation la premiere fois pour activer l'envoi vers votre email.
-          </p>
         </form>
       </div>
     </section>
@@ -191,7 +188,6 @@
   <script src="js/main.js"></script>
 </body>
 </html>
-
 
 
 

@@ -2,8 +2,7 @@
   var navToggle = document.querySelector(".nav-toggle");
   var siteNav = document.getElementById("site-nav");
   var year = document.getElementById("year");
-  var form = document.getElementById("devis");
-  var status = document.getElementById("form-status");
+  var forms = Array.prototype.slice.call(document.querySelectorAll(".quote-form"));
   var contactSuccess = document.getElementById("contact-success");
   var projectCards = Array.prototype.slice.call(document.querySelectorAll(".project-card"));
   var autoGalleries = Array.prototype.slice.call(document.querySelectorAll(".auto-gallery"));
@@ -65,11 +64,6 @@
 
   if (year) {
     year.textContent = new Date().getFullYear();
-  }
-
-  if (contactSuccess && window.location.search.indexOf("envoye=1") !== -1) {
-    contactSuccess.textContent = "Votre demande a ete envoyee. Verifiez votre e-mail de contact (activation FormSubmit requise la premiere fois).";
-    contactSuccess.style.color = "#0f7a4f";
   }
 
   if (navToggle && siteNav) {
@@ -322,8 +316,16 @@
     return isValid;
   }
 
-  if (form) {
+  forms.forEach(function (form) {
     var fields = Array.prototype.slice.call(form.querySelectorAll(".field"));
+    var status = form.querySelector("#form-status") || form.querySelector(".form-status");
+    var replyToField = form.querySelector('input[name="_replyto"]');
+    var emailField = form.querySelector('input[name="email"]');
+    var urlField = form.querySelector('input[name="_url"]');
+
+    if (urlField) {
+      urlField.value = window.location.href;
+    }
 
     fields.forEach(function (fieldEl) {
       var input = fieldEl.querySelector("input, select, textarea");
@@ -357,10 +359,66 @@
       }
 
       if (isEmailSubmit) {
+        event.preventDefault();
+
+        if (replyToField && emailField) {
+          replyToField.value = emailField.value;
+        }
+
         if (status) {
           status.textContent = "Envoi en cours...";
           status.style.color = "#2f93df";
         }
+
+        var submitButton = form.querySelector('button[type="submit"]');
+        if (submitButton) submitButton.disabled = true;
+
+        var formData = new FormData(form);
+        var ajaxAction = action.replace("https://formsubmit.co/", "https://formsubmit.co/ajax/");
+
+        fetch(ajaxAction, {
+          method: "POST",
+          headers: {
+            "Accept": "application/json"
+          },
+          body: formData
+        })
+          .then(function (response) {
+            return response.json().catch(function () {
+              return {};
+            }).then(function (data) {
+              if (!response.ok) {
+                throw new Error((data && data.message) || "Erreur reseau");
+              }
+              return data;
+            });
+          })
+          .then(function (data) {
+            if (!data || data.success === "false" || data.success === false) {
+              throw new Error((data && data.message) || "Envoi impossible");
+            }
+
+            if (status) {
+              status.textContent = "Votre message a bien ete envoye.";
+              status.style.color = "#0f7a4f";
+            }
+
+            form.reset();
+            fields.forEach(function (fieldEl) {
+              fieldEl.classList.remove("is-invalid");
+              var errorEl = fieldEl.querySelector(".field__error");
+              if (errorEl) errorEl.textContent = "";
+            });
+          })
+          .catch(function (error) {
+            if (status) {
+              status.textContent = error && error.message ? error.message : "Erreur lors de l'envoi. Verifiez la connexion ou reessayez.";
+              status.style.color = "#c0392b";
+            }
+          })
+          .finally(function () {
+            if (submitButton) submitButton.disabled = false;
+          });
         return;
       }
 
@@ -376,5 +434,5 @@
         if (errorEl) errorEl.textContent = "";
       });
     });
-  }
+  });
 })();
